@@ -1,0 +1,175 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><script src="//static.shibang-china.com/github.js"></script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Grinding Mill China</title>
+<link rel="stylesheet" type="text/css" href="css/style.css"/>
+<script type="text/javascript" src="/js/jquery-1.js"></script>
+<script type="text/javascript" src="/js/smartmenu-min.js"></script>
+<script type="text/javascript">
+    jQuery(window).ready(function(){
+      if(window.innerWidth>655){
+        jQuery("#navigation").Smartmenu({animationDuration: 350});
+      }
+    });
+    //SyntaxHighlighter.all();
+</script>
+</head>
+<body>
+<div class="header" id="head">
+  <div class="header_top">
+    <img src="/images/top-2.gif" alt="" />
+    <ul class="right">
+      <li><a rel="nofollow" href="/sitemap.xml" class="sitemap"><i class="fa fa-sitemap"></i>Site Map</a></li>
+      <li><a rel="nofollow" href="javascript:void(0)" onclick="openZoosUrl();" class="service">Online Service</a></li>
+      <li><a rel="nofollow" href="/contact-us.html" class="chat">Inquiry</a></li>
+    </ul>
+  </div>
+  <div class="nav">
+    <div class="logo"><img src="/images/logo.png" alt="" /></div>
+    <div class="nav_list">
+      <ul>
+        <li><a href="/" class="active">Home</a></li>
+        <li><a href="/products/">Products</a></li>
+        <li><a href="/solutions/">Solutions</a></li>
+        <li><a href="/project/">Project</a></li>
+        <li><a rel="nofollow" href="/about-us.html">About</a></li>
+        <li><a rel="nofollow" href="/contact-us.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div id="banner">
+  <div id="focus">
+    <ul>
+      <li><a rel="nofollow" href="/products/"><img src="/images/banner5.jpg" id="bannerimage" /></a></li>
+      <li><a rel="nofollow" href="/solutions/"><img src="/images/banner_new1.jpg" id="bannerimage1" /></a></li>
+      <li><a rel="nofollow" href="/contact-us.html"><img src="/images/banner6.jpg" id="bannerimage2" /></a></li>
+      <li><a rel="nofollow" href="/project/"><img src="/images/banner_new2.jpg" id="bannerimage3" /></a></li>
+      <li><a rel="nofollow" href="/about-us.html"><img src="/images/banner_new3.jpg" id="bannerimage3" /></a></li>
+    </ul>
+  </div>
+</div>
+<script type="text/javascript">
+
+var width = window.innerWidth||document.body.clientWidth;
+if(width>1900){
+	width=1900;
+}
+height = width*596/1900;
+var banner = document.getElementById("banner");
+banner.style.height=height+"px";
+
+
+		$(function(){
+
+			var sWidth = $("#focus").width(); 
+			var len = $("#focus li").length; 
+			window.onload=function(){
+				var hei = $("#focus img").eq(0).height()
+				$("#focus").height(hei)
+				$("#banner").height(hei)
+				$("#focus li").height(hei)
+
+				var btn = "<div class='btnBg'></div><div class='btn'>";
+			for(var i=0; i < len; i++) {	
+					btn += "<span></span>";				
+			}
+			btn += "</div><div class='preNext pre'></div><div class='preNext next'></div>";
+			$("#focus").append(btn);
+			$("#focus .btnBg").css("opacity",0.5);
+		
+		
+			$("#focus .btn span").css("opacity",0.4).mouseenter(function() {
+				index = $("#focus .btn span").index(this);
+				showPics(index,sWidth);
+			}).eq(0).trigger("mouseenter");
+			}
+			
+			$("#focus ul li").width(sWidth);
+			window.onresize=function(){
+			sWidth = $("#focus").width(); 
+			len = $("#focus ul li").length; 
+			$("#focus ul li").width(sWidth);
+			$("#focus ul").css("width",sWidth * (len));	
+			var hei = $("#focus img").eq(0).height()
+			$("#focus").height(hei)
+			$("#banner").height(hei)
+			$("#focus li").height(hei)
+    		var now= $("#focus .btn span").index($(".on"))
+    		$("#focus ul").stop(true,false).css({"left":(now-1)*sWidth})
+			console.log(window.innerWidth)
+			}
+			
+			var index = 0;
+			var picTimer;
+
+			
+
+			$("#focus ul").css("width",sWidth * (len));
+			
+			
+			
+		
+			
+			$("#focus .preNext").css("opacity",0.2).hover(function() {
+				$(this).stop(true,false).animate({"opacity":"0.5"},300);
+			},function() {
+				$(this).stop(true,false).animate({"opacity":"0.2"},300);
+			});
+		
+			
+			$("#focus .pre").click(function() {
+				index -= 1;
+				if(index == -1) {index = len - 1;}
+				showPics(index,sWidth);
+			});
+		
+			
+			$("#focus .next").click(function() {
+				index += 1;
+				if(index == len) {index = 0;}
+				showPics(index,sWidth);
+			});
+		
+			$("#focus").hover(function() {
+				clearInterval(picTimer);
+			},function() {
+				picTimer = setInterval(function() {
+					showPics(index,sWidth);
+					index++;
+					if(index == len) {index = 0;}
+				},4000); 
+			}).trigger("mouseleave");
+			
+			
+			function showPics(index,sw) { 
+				var nowLeft = -index*sw; 
+				$("#focus ul").stop(true,false).animate({"left":nowLeft},300); 
+				$("#focus .btn span").removeClass("on").eq(index).addClass("on"); 
+				$("#focus .btn span").stop(true,false).animate({"opacity":"1"},300).eq(index).stop(true,false).animate({"opacity":"1"},300); 
+			}
+		
+		});
+		</script>
+<!--banner-->
+<div class="home_products">
+<script type="text/javascript" src="/js/list.js"></script>
+</div>
+<div class="home_about"> <img src="images/page.jpg" alt="" />
+  <h3>About Our Company</h3>
+  <p>We are a high-technology minerals processing company, Professional manufacturer of mining crushers and industrial grinding mills, located in beautiful Pudong New District, with factory area of more than 90,000 square meters. The company features advanced CAD and advanced Solidworks 3D mechanical design, which ensures the quality of design, development, manufacturing and after-sale service.</p>
+  <ul>
+   <li><a href='post/2038.html'>gold mining equipment for sale nc</a></li><li><a href='post/7539.html'>ball mill shaft design</a></li><li><a href='post/13040.html'>sand mining and washing machines in sri lanka</a></li><li><a href='post/18541.html'>tube mill for coal crushing</a></li><li><a href='post/24042.html'>a typical plan of an iron ore beneficiation process</a></li><li><a href='post/29543.html'>iron ore processing methods for vietnamese mining companies</a></li><li><a href='post/35044.html'>3 and four roller grinding mill manufacturers in india</a></li>  </ul>
+</div>
+<div class="footer">
+  <script type="text/javascript" src="/js/footer.js"></script>
+  <div class="copyright">
+    <p>&copy; Copyrights <b>EXCEPTION</b> 2014. All rights reserved. <span><a rel="nofollow" href="#">Privacy policy</a> | <a rel="nofollow" href="#">Terms of use</a></span></p>
+  </div>
+</div>
+<div class="totop"><a rel="nofollow" href="#head"><img src="/images/top.gif" alt="" width="17" height="11" /></a></div>
+
+</body>
+</html>
